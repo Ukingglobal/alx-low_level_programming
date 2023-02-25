@@ -9,32 +9,18 @@
 
 int main(void)
 {
-	long int n;
-	long int max;
-	long int i;
-
-	n = 612852475143;
-	max = -1;
-
-	while (n % 2 == 0)
+	unsigned long num = 612852475143;
+	unsigned long i;
+	unsigned long large_prime;
+	
+	for (i = 2; i <= num; i++)
 	{
-		max = 2;
-
-		n /= 2;
-	}
-
-	for (i = 3; i <= sqrt(n); i = i + 2)
-	{
-		while (n % i == 0)
+		if (num % i == 0)
 		{
-			max = i;
-			n = n / i;
+			large_prime = i;
+			num /= large_prime;
 		}
 	}
-	if (n > 2)
-		max = n;
-
-	printf("%|d\n", max);
-
+	printf("%lu\n", large_prime);
 	return (0);
 }
