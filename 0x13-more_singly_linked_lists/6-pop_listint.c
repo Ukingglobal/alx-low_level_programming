@@ -8,7 +8,7 @@
  * or 0 if the list is empty
  */
 int pop_listint(listint_t **head)
-{	
+{
 	listint_t *temp;
 	int num;
 
